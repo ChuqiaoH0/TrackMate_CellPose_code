@@ -9,9 +9,10 @@ Before you start, please make sure you have the following installed:
 
 * [CellPose](https://github.com/MouseLand/cellpose)
 
-** Optional: you can set up GPU usage following the instructions, although CPU would also work
-** Note: keep track of the directory where you install CellPose and where the CellPose models are. You will need to type in these directories in the code
-![image](https://github.com/ChuqiaoH0/TrackMate_CellPose_code/assets/136732876/a360bf0e-99eb-458a-af77-d1874df4e00e)
+   ** Optional: you can set up GPU usage following the instructions, although CPU would also work
+
+  ** Note: keep track of the directory where you install CellPose and where the CellPose models are. You will need to type in these directories in the code
+   ![image](https://github.com/ChuqiaoH0/TrackMate_CellPose_code/assets/136732876/a360bf0e-99eb-458a-af77-d1874df4e00e)
    
 ## Example files and output
 
