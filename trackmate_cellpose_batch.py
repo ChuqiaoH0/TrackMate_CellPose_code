@@ -19,6 +19,9 @@ from fiji.plugin.trackmate.action import CaptureOverlayAction
 from  fiji.plugin.trackmate.action import LabelImgExporter
 from fiji.plugin.trackmate.cellpose.CellposeSettings import PretrainedModel
 
+# Change for labeled image export: LABEL_IS_TRACK_ID--> paint label ID using track ID; LABEL_IS_INDEX--> paint label ID as index at each time frame
+from fiji.plugin.trackmate.action.LabelImgExporter.LabelIdPainting import LABEL_IS_TRACK_ID # LABEL_IS_INDEX 
+
 from ij import IJ
 from datetime import datetime as dt
 import sys 
@@ -188,11 +191,11 @@ def run( rootdir, tif_path , label_path, trackim_path):
 			IJ.save(capture, trackim_path + 'Tracks_' + thisImName[0:-4]+ ".tif")
 			capture.close()
 		
-		# export labeled image
-		exportSpotsAsPxls = False
+		# Change for labeled image export: export labeled image 
+		exportSpotsAsDots = False
 		exportTracksOnly = True
-		useIDAsLabel = False
-		lblImg = LabelImgExporter.createLabelImagePlus(trackmate, exportSpotsAsPxls, exportTracksOnly, useIDAsLabel )
+		lblImg = LabelImgExporter.createLabelImagePlus(trackmate, exportSpotsAsDots, exportTracksOnly, LABEL_IS_TRACK_ID)
+		
 		lblImg.setTitle("Labeled image")
 		lblImg.show()
 		IJ.save(lblImg, label_path + 'LblImg_' + thisImName[0:-4]+ ".tif")
